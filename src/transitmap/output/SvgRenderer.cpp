@@ -80,13 +80,13 @@ void SvgRenderer::print(const RenderGraph& outG) {
 
   auto latLngLL = util::geo::webMercToLatLng<double>(box.getLowerLeft().getX(),
                                                      box.getLowerLeft().getY());
-  auto latLngUR = util::geo::webMercToLatLng<double>(
-      box.getUpperRight().getX(), box.getUpperRight().getY());
+  auto latLngUR = util::geo::webMercToLatLng<double>(box.getUpperRight().getX(),
+      box.getUpperRight().getY());
 
-  params["latlng-box"] = std::to_string(latLngLL.getX()) + "," +
-                         std::to_string(latLngLL.getY()) + "," +
-                         std::to_string(latLngUR.getX()) + "," +
-                         std::to_string(latLngUR.getY());
+params["latlng-box"] = std::to_string(latLngLL.getY()) + "," +
+                       std::to_string(latLngLL.getX()) + "," +
+                       std::to_string(latLngUR.getY()) + "," +
+                       std::to_string(latLngUR.getX());
 
   params["width"] = std::to_string(rparams.width);
   params["height"] = std::to_string(rparams.height);
