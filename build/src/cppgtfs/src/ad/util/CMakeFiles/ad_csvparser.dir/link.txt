@@ -1,0 +1,2 @@
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libad_csvparser.a CMakeFiles/ad_csvparser.dir/CsvParser.cpp.o CMakeFiles/ad_csvparser.dir/CsvWriter.cpp.o CMakeFiles/ad_csvparser.dir/ZipCsvParser.cpp.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib libad_csvparser.a
