@@ -31,7 +31,7 @@ Building and Installation
 Fetch this repository and init submodules:
 
 ```bash
-git clone --recurse-submodules https://github.com/ad-freiburg/loom.git
+git clone --recurse-submodules https://github.com/somardigital/loom.git
 ```
 
 Build and install:
