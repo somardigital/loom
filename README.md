@@ -168,6 +168,8 @@ cmake ..
 make -j
 ```
 
+Take note of where the build directory is as this is used as an ENV variable in metlink-backend.
+
 Troubleshooting local
 ================
 
