@@ -149,3 +149,56 @@ cat examples/freiburg.json | sudo docker run -i loom octi
 ```bash
 docker run -v /home/user/gurobi:/gurobi loom <TOOL>
 ```
+
+Running locally within metlink-backend
+================
+
+Within your local metlink-backend directory, fetch this repository and init submodules:
+
+```bash
+git clone --recurse-submodules https://github.com/somardigital/loom.git
+```
+
+Build and install:
+
+```bash
+cd loom
+mkdir build && cd build
+cmake ..
+make -j
+```
+
+Troubleshooting local
+================
+
+If certain packages cannot be found when running `cmake ..` causing the build to fail when running `make -j`, you may need to comment out some lines in your local `loom/CMakeLists.txt` (suspected to be something to do with M1).
+
+Find the following lines and comment these out like so:
+
+```bash
+# find_package(OpenMP)
+# if(OPENMP_FOUND)
+# set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OpenMP_C_FLAGS}")
+# set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
+# endif()
+
+# find_package(COIN)
+# find_package(Protobuf)
+
+# if(Protobuf_FOUND)
+# 	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DPROTOBUF_FOUND=1")
+# endif()
+
+# if(COIN_FOUND)
+# 	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DCOIN_FOUND=1")
+# endif()
+```
+Then 
+
+```bash
+cd ..
+rm -rf build
+mkdir build && cd build
+cmake ..
+make -j
+```
